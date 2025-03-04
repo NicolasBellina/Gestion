@@ -13,6 +13,7 @@
   "dependencies": {
     "@fastify/type-provider-json-schema-to-ts": "^5.0.0",
     "@fastify/type-provider-typebox": "^5.1.0",
+    "@heroicons/vue": "^2.2.0",
     "@iconify/vue": "^4.3.0",
     "@nuxt/ui": "^2.21.0",
     "@nuxtjs/apollo": "^4.0.1-rc.5",

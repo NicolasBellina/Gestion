@@ -31,5 +31,10 @@ export default defineNuxtConfig({
         // { rel: 'icon', type: 'image/png', href: '/favicon.png' }
       ]
     }
+  },
+  nitro: {
+    routeRules: {
+      '/_nuxt/**': { cors: false }
+    }
   }
 })
