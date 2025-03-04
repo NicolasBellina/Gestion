@@ -4,7 +4,7 @@
 
 ### Front-end
 - **Vue.js**
-  ![Vue.js logo](https://upload.wikimedia.org/wikipedia/commons/6/63/Vue.js_Logo_2.svg)
+  ![Vue.js logo]([https://upload.wikimedia.org/wikipedia/co](https://www.google.com/url?sa=i&url=https%3A%2F%2Ffr.wikipedia.org%2Fwiki%2FVue.js&psig=AOvVaw24EawaE_hfxtRHB34pYK_4&ust=1741172334707000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCLiU3sWi8IsDFQAAAAAdAAAAABAE)
   
 - **Nuxt.js**
   ![Nuxt.js logo](https://nuxtjs.org/logos/nuxtjs-portrait.svg)
