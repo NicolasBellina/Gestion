@@ -40,7 +40,7 @@ mongoose.connect(MONGODB_URI, {
 const start = async () => {
   try {
     await app.listen({ port: 4000, host: '0.0.0.0' });
-    console.log('🚀 Serveur démarré sur http://localhost:4000/graphql');
+    console.log('🚀 Serveur démarré sur http://localhost:4000/graphiql');
   } catch (err) {
     console.error(err);
     process.exit(1);
