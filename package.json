@@ -1,0 +1,7 @@
+{
+  "name": "blog-project",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm -r --parallel run dev"
+  }
+} 

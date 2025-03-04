@@ -1,0 +1,31 @@
+{
+  "name": "blog-frontend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "dev:watch": "nodemon",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@fastify/type-provider-json-schema-to-ts": "^5.0.0",
+    "@fastify/type-provider-typebox": "^5.1.0",
+    "@iconify/vue": "^4.3.0",
+    "@nuxt/ui": "^2.21.0",
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "@sinclair/typebox": "^0.34.28",
+    "fastify": "^5.2.1",
+    "mongoose": "^8.11.0",
+    "nuxt": "^3.15.4",
+    "nuxt-icon": "^1.0.0-beta.7",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "nodemon": "^3.1.0"
+  }
+}

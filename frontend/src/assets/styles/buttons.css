@@ -1,0 +1,133 @@
+/* Styles de base pour tous les boutons d'action */
+.action-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Bouton de création (bleu) */
+.create-btn {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.create-btn:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+}
+
+.create-btn:active {
+  transform: translateY(0);
+}
+
+/* Bouton de modification (violet) */
+.edit-btn, .action-btn.edit {
+  background-color: #eef2ff;
+  color: #4f46e5;
+}
+
+.edit-btn:hover, .action-btn.edit:hover {
+  background-color: #e0e7ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+}
+
+.edit-btn:hover .icon, .action-btn.edit:hover .icon {
+  transform: rotate(15deg);
+}
+
+/* Bouton de suppression (rouge) */
+.delete-btn, .action-btn.delete {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.delete-btn:hover, .action-btn.delete:hover {
+  background-color: #fecaca;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.2);
+}
+
+.delete-btn:hover .icon, .action-btn.delete:hover .icon {
+  transform: scale(1.1);
+}
+
+/* Tooltip pour les boutons d'action */
+.action-btn .tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background-color: #1f2937;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn .tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #1f2937 transparent transparent transparent;
+}
+
+.action-btn:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* Animation pour le spinner de chargement */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Styles pour les icônes */
+.icon {
+  width: 1.2em;
+  height: 1.2em;
+  transition: transform 0.2s ease;
+}
+
+/* Media queries pour le responsive */
+@media (max-width: 640px) {
+  .action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .action-btn .tooltip {
+    display: none;
+  }
+}

@@ -1,0 +1,17 @@
+@import './post-detail.css';
+@import './post-card.css';
+@import './modal.css';
+
+:root {
+  --primary-color: #3b82f6;
+  --error-color: #dc2626;
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --border-color: #e5e7eb;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f3f4f6;
+}

@@ -1,0 +1,17 @@
+{
+  "watch": [
+    "components/**/*",
+    "pages/**/*",
+    "layouts/**/*",
+    "app.vue",
+    "nuxt.config.ts"
+  ],
+  "ext": "js,ts,vue,json",
+  "ignore": [
+    ".git",
+    "node_modules/**/*",
+    ".nuxt/**/*",
+    "dist/**/*"
+  ],
+  "exec": "npm run dev"
+} 

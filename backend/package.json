@@ -1,0 +1,35 @@
+{
+  "name": "blog-backend",
+  "version": "1.0.0",
+  "description": "Un blog API avec Fastify et GraphQL",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^8.5.0",
+    "@fastify/static": "^6.12.0",
+    "@fastify/swagger": "^9.4.2",
+    "@fastify/swagger-ui": "^5.2.2",
+    "dotenv": "^16.4.7",
+    "fastify": "^4.29.0",
+    "graphql": "^16.8.1",
+    "graphql-compose": "^9.1.0",
+    "graphql-compose-mongoose": "^10.0.0",
+    "mercurius": "^13.4.1",
+    "mongodb": "^6.13.1",
+    "mongoose": "^8.11.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/apollo": "^5.0.0-alpha.14",
+    "@types/node": "^20.17.19",
+    "nuxt": "^3.14.1592",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
+  }
+}
