@@ -121,7 +121,7 @@ const handleSubmit = async () => {
   input: {
     name: user.value.name,
     email: user.value.email,
-    avatar: avatarPreview.value // Ajoutez cette ligne
+    avatar: avatarPreview.value   
   }
 }
       }),
