@@ -3,7 +3,7 @@ name: Deploy Vue.js to VPS
 on:
   push:
     branches:
-      - main  # Déclenche le déploiement à chaque push sur main
+      - main
 
 jobs:
   deploy:
@@ -18,11 +18,14 @@ jobs:
         with:
           node-version: 18
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install Dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Build Vue.js App
-        run: npm run build
+        run: pnpm run build
 
       - name: Deploy to VPS
         uses: appleboy/scp-action@v0.1.4
@@ -41,3 +44,4 @@ jobs:
           password: ${{ secrets.VPS_PASSWORD }}
           script: |
             sudo systemctl restart nginx
+
