@@ -2,7 +2,8 @@
   "name": "blog-project",
   "private": true,
   "scripts": {
-    "dev": "pnpm -r --parallel run dev"
+    "dev": "pnpm -r --parallel run dev",
+    "build": "pnpm -r --parallel run build"
   },
   "dependencies": {
     "date-fns": "^4.1.0"
