@@ -1,6 +1,6 @@
 import { composeMongoose } from 'graphql-compose-mongoose';
 import { schemaComposer } from 'graphql-compose';
-import { UserModel } from '../../models/User';
+import { User } from '../../models/User';
 import { PostTC } from './PostTC';
 
 interface IUserInput {
@@ -9,7 +9,7 @@ interface IUserInput {
   avatar?: string;
 }
 
-export const UserTC = composeMongoose(UserModel, {
+export const UserTC = composeMongoose(User, {
   name: 'User',
   description: 'User type',
   fields: {
@@ -24,7 +24,7 @@ UserTC.addResolver({
   name: 'findMany',
   type: [UserTC],
   resolve: async () => {
-    return UserModel.find();
+    return User.find();
   }
 });
 
@@ -33,7 +33,7 @@ UserTC.addResolver({
   type: UserTC,
   args: { _id: 'MongoID!' },
   resolve: async ({ args }: { args: { _id: string } }) => {
-    return UserModel.findById(args._id);
+    return User.findById(args._id);
   }
 });
 
@@ -54,7 +54,7 @@ UserTC.addResolver({
   type: UserTC,
   resolve: async ({ args }: { args: { input: IUserInput } }) => {
     try {
-      const user = new UserModel(args.input);
+      const user = new User(args.input);
       await user.save();
       return user;
     } catch (error) {
@@ -77,7 +77,7 @@ UserTC.addResolver({
   },
   resolve: async ({ args }: { args: { _id: string, record: Partial<IUserInput> } }) => {
     try {
-      const updatedUser = await UserModel.findByIdAndUpdate(
+      const updatedUser = await User.findByIdAndUpdate(
         args._id,
         { $set: args.record },
         { new: true, runValidators: true }
@@ -103,7 +103,7 @@ UserTC.addResolver({
   },
   resolve: async ({ args }: { args: { _id: string } }) => {
     try {
-      const deletedUser = await UserModel.findByIdAndDelete(args._id);
+      const deletedUser = await User.findByIdAndDelete(args._id);
       if (!deletedUser) {
         throw new Error('Utilisateur non trouvé');
       }

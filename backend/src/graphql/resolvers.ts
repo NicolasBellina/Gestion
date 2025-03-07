@@ -1,5 +1,6 @@
-import { User } from '../models/User';
+import { create } from 'domain';
 import { Post } from '../models/Post';
+import { User } from '../models/User';
 
 // Types temporaires pour la démonstration
 interface Post {
@@ -15,6 +16,7 @@ interface User {
   id: string;
   name: string;
   email: string;
+  avatar?: string;
 }
 
 // Stockage temporaire en mémoire
@@ -34,7 +36,7 @@ export const resolvers = {
     },
     user: async (_: any, { id }: { id: string }) => {
       return await User.findById(id);
-    }
+    }, 
   },
 
   Mutation: {
@@ -63,10 +65,11 @@ export const resolvers = {
       return result.deletedCount === 1;
     },
 
-    createUser: async (_: any, { name, email }: { name: string; email: string }) => {
+    createUser: async (_: any, { name, email, avatar }: { name: string; email: string; avatar?: string }) => {
       const user = new User({
         name,
-        email
+        email,
+        avatar
       });
       return await user.save();
     }

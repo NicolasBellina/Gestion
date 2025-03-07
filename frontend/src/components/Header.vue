@@ -7,7 +7,6 @@
       <div class="nav-links">
         <NuxtLink to="/blog" class="nav-link">Blog</NuxtLink>
         <NuxtLink to="/users" class="nav-link">Utilisateurs</NuxtLink>
-        <NuxtLink to="/planning" class="nav-link">Planning</NuxtLink>
       </div>
     </nav>
   </header>

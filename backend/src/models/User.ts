@@ -1,6 +1,6 @@
 import mongoose, { Document } from 'mongoose';
 
-export interface IUser extends Document {
+export interface UserModel extends Document {
   name: string;
   email: string;
   avatar: string;
@@ -55,4 +55,4 @@ userSchema.methods.getPostCount = async function() {
   return await mongoose.model('Post').countDocuments({ authorId: this._id });
 };
 
-export const UserModel = mongoose.model<IUser>('User', userSchema); 
+export const User = mongoose.model<UserModel>('User', userSchema); 

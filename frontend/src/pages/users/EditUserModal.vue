@@ -121,11 +121,6 @@ const handleAvatarChange = (event: Event) => {
   }
 };
 
-const removeAvatar = () => {
-  avatarPreview.value = '';
-  formData.value.avatar = '';
-};
-
 const handleSubmit = async () => {
   loading.value = true;
   try {

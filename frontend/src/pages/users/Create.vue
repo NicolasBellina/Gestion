@@ -88,20 +88,18 @@ const CREATE_USER_MUTATION = `
       _id
       name
       email
+      avatar
       createdAt
     }
   }
 `;
 
 const handleAvatarChange = (event: Event) => {
-  const input = event.target as HTMLInputElement;
-  if (input.files && input.files[0]) {
-    avatarFile.value = input.files[0];
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      avatarPreview.value = e.target?.result as string;
-    };
-    reader.readAsDataURL(input.files[0]);
+  const target = event.target as HTMLInputElement;
+  const file = target.files?.[0];
+  if (file) {
+    avatarFile.value = file;
+    avatarPreview.value = URL.createObjectURL(file);
   }
 };
 
@@ -120,12 +118,13 @@ const handleSubmit = async () => {
       body: JSON.stringify({
         query: CREATE_USER_MUTATION,
         variables: {
-          input: {
-            name: user.value.name,
-            email: user.value.email
-          }
-        }
-      })
+  input: {
+    name: user.value.name,
+    email: user.value.email,
+    avatar: avatarPreview.value // Ajoutez cette ligne
+  }
+}
+      }),
     });
 
     const result = await response.json();
